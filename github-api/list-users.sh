@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#######
+# About: This shell script will show you the list of users who have access to the repository.
+# Input Parameters Required: You need to export the username and the token name, then you need to provide command line
+# arguments while executing the shell scripting i.e., ./list-user.sh REPO_OWNER REPO_NAME
+# Owner: Abhishek Veeramalla
+######
+
 # GitHub API URL
 API_URL="https://api.github.com"
 
