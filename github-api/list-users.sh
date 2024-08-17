@@ -7,6 +7,11 @@
 # Owner: Abhishek Veeramalla
 ######
 
+#If the shell scripted with all the required pararmeters then move with the next lines of the script. And if the user has not
+# provider with the required information then the script will fail here itself, saying that please execute the scirpt with all
+# the required parameters
+helper()
+
 # GitHub API URL
 API_URL="https://api.github.com"
 
