@@ -35,12 +35,22 @@ function list_users_with_read_access {
     collaborators="$(github_api_get "$endpoint" | jq -r '.[] | select(.permissions.pull == true) | .login')"
 
     # Display the list of collaborators with read access
+    # -z operator is used to check if it is empty or not. That is here it will check if the collaborators section is empty or not.
     if [[ -z "$collaborators" ]]; then
         echo "No users with read access found for ${REPO_OWNER}/${REPO_NAME}."
     else
         echo "Users with read access to ${REPO_OWNER}/${REPO_NAME}:"
         echo "$collaborators"
     fi
+}
+
+# Add helper function. This helper function will let us know how to execute the shell script.
+# Without providing the command line argument it will show error like the way of execuitng the shell scripting is wrong.
+# where -ne means not equal to
+function helper{ 
+ expected-cmd_args = 2
+ if [$# -ne $expected-cmd_args]; then
+     echo "please execute the script with required cmd args"
 }
 
 # Main script
